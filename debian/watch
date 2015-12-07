@@ -1,0 +1,2 @@
+version=3
+http://pkg-ruby-extras.alioth.debian.org/cgi-bin/gemwatch/gollum-rugged_adapter .*/gollum-rugged_adapter-(.*).tar.gz
