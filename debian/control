@@ -22,5 +22,8 @@ Depends: ruby | ruby-interpreter,
          ruby-rugged (>= 0.21.3),
          ${misc:Depends},
          ${shlibs:Depends}
-Description: Adapter for Gollum to use Rugged (libgit2) at the backend.
- Adapter for Gollum to use Rugged (libgit2) at the backend.
+Description: Adapter for Gollum to use Rugged (libgit2) at the backend
+ Gollum can use multiple backends and this package provides rugged backend.
+ .
+ Default backend is grit, but since it is not maintained, rugged backend will
+ become the default backend soon.

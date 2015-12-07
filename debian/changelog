@@ -1,5 +1,5 @@
-ruby-gollum-rugged-adapter (0.4.1-1) UNRELEASED; urgency=medium
+ruby-gollum-rugged-adapter (0.4.1-1) unstable; urgency=medium
 
-  * Initial release (Closes: #nnnn)
+  * Initial release (Closes: #807332)
 
- -- Pirate Praveen <praveen@debian.org>  Mon, 07 Dec 2015 20:14:21 +0530
+ -- Pirate Praveen <praveen@debian.org>  Mon, 07 Dec 2015 20:17:43 +0530
