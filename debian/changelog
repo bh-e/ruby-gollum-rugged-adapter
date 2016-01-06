@@ -1,3 +1,9 @@
+ruby-gollum-rugged-adapter (0.4.1-2) unstable; urgency=medium
+
+  * author-is-committer.patch (Closes: #809812) 
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 06 Jan 2016 20:31:45 +0530
+
 ruby-gollum-rugged-adapter (0.4.1-1) unstable; urgency=medium
 
   * Initial release (Closes: #807332)

@@ -1,0 +1,21 @@
+From 10b6da7d175b78a89436400ffd3526e3a4a0e382 Mon Sep 17 00:00:00 2001
+From: Jean Hominal <jhominal@gmail.com>
+Date: Mon, 9 Nov 2015 08:22:12 +0100
+Subject: [PATCH] Set committer to the same actor as author. Resolves #11.
+
+---
+ lib/rugged_adapter/git_layer_rugged.rb | 1 +
+ 1 file changed, 1 insertion(+)
+
+Index: ruby-gollum-rugged-adapter/lib/rugged_adapter/git_layer_rugged.rb
+===================================================================
+--- ruby-gollum-rugged-adapter.orig/lib/rugged_adapter/git_layer_rugged.rb
++++ ruby-gollum-rugged-adapter/lib/rugged_adapter/git_layer_rugged.rb
+@@ -452,6 +452,7 @@ module Gollum
+         actor = Gollum::Git::Actor.default_actor if actor.nil?
+         commit_options[:tree] = @index.write_tree
+         commit_options[:author] = actor.to_h
++        commit_options[:committer] = actor.to_h
+         commit_options[:message] = message.to_s
+         commit_options[:parents] = parents
+         commit_options[:update_ref] = head
