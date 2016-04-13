@@ -189,7 +189,12 @@ module Gollum
       def apply_patch(head_sha = 'HEAD', patch=nil)
         false # Rewrite gollum-lib's revert so that it doesn't require a direct equivalent of Grit's apply_patch
       end
-      
+
+      def revert(path, sha1, sha2, ref)
+        # FIXME: See https://github.com/gollum/grit_adapter/pull/14
+        fail NotImplementedError
+      end
+
       def checkout(path, ref = 'HEAD', options = {})
         path = path.nil? ? path : [path]
         options = options.merge({:paths => path, :strategy => :force})
@@ -223,8 +228,6 @@ module Gollum
       end
 
       def versions_for_path(path = nil, ref = nil, options = {})
-        options.delete :max_count
-        options.delete :skip
         log(ref, path, options)
       end
       
@@ -281,7 +284,6 @@ module Gollum
         branches = [branches].flatten.map {|branch| "refs/heads/#{branch}" unless branch =~ /^refs\/heads\//}
         r = @repo.remotes[remote]
         r.fetch(branches, options)
-        r.save
         branches.each do |branch|
           branch_name = branch.match(/^refs\/heads\/(.*)/)[1]
           remote_name = remote.match(/^(refs\/heads\/)?(.*)/)[2]
@@ -452,6 +454,7 @@ module Gollum
         actor = Gollum::Git::Actor.default_actor if actor.nil?
         commit_options[:tree] = @index.write_tree
         commit_options[:author] = actor.to_h
+        commit_options[:committer] = actor.to_h
         commit_options[:message] = message.to_s
         commit_options[:parents] = parents
         commit_options[:update_ref] = head
@@ -479,7 +482,7 @@ module Gollum
 
       def get_parents(parents, head)
         if parents
-          parents.map!{|parent| parent.commit} if parents
+          parents.map{|parent| parent.commit}
         elsif ref = @rugged_repo.references[head]
           ref = ref.target
           ref = ref.target if ref.respond_to?(:target)
