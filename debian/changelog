@@ -1,3 +1,11 @@
+ruby-gollum-rugged-adapter (0.4.2-1) UNRELEASED; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Remove already applied patches.
+
+ -- Balasankar C <balasankarc@autistici.org>  Wed, 13 Apr 2016 10:02:26 +0530
+
 ruby-gollum-rugged-adapter (0.4.1-2) unstable; urgency=medium
 
   * author-is-committer.patch (Closes: #809812) 
