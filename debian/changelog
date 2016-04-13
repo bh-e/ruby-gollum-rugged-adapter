@@ -1,10 +1,13 @@
-ruby-gollum-rugged-adapter (0.4.2-1) UNRELEASED; urgency=medium
+ruby-gollum-rugged-adapter (0.4.2-1) experimental; urgency=medium
 
-  * Team upload.
+  [ Balasankar C ]
   * New upstream release.
   * Remove already applied patches.
 
- -- Balasankar C <balasankarc@autistici.org>  Wed, 13 Apr 2016 10:02:26 +0530
+  [ Pirate Praveen ]
+  * Update minimum version of ruby-rugged to 0.24.0
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 13 Apr 2016 22:32:27 +0530
 
 ruby-gollum-rugged-adapter (0.4.1-2) unstable; urgency=medium
 
